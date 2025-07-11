@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demystifying Collaborative Filtering - Jaggu's Blog</title>
+    <link rel="stylesheet" href="../style.css"> <link rel="icon" href="favicon.ico"> <style>
+        /* Specific styles for individual blog posts (can be shared or unique) */
+        .blog-post-content {
+            background-color: var(--white);
+            padding: 3rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            line-height: 1.8;
+        }
+
+        .blog-post-content h1 {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .blog-post-content .post-meta {
+            font-size: 0.95rem;
+            color: var(--gray-700);
+            text-align: center;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .blog-post-content h2 {
+            font-size: 2rem;
+            color: var(--gray-900);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-post-content p {
+            margin-bottom: 1.5rem;
+            color: var(--gray-800);
+        }
+
+        .blog-post-content ul, .blog-post-content ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            list-style-type: disc;
+        }
+
+        .blog-post-content li {
+            margin-bottom: 0.5rem;
+            color: var(--gray-800);
+        }
+
+        .blog-navigation {
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .blog-navigation a {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .blog-navigation a:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+    </style>
+</head>
+<body class="body-base">
+    <header class="main-header">
+        <nav class="navbar container">
+            <a href="../index.html" class="navbar-brand">Jaggu's Portfolio</a> <ul class="navbar-nav">
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="../blog.html" class="nav-link">Blog</a></li> </ul>
+        </nav>
+    </header>
+
+    <main class="blog-main-content container">
+        <article class="blog-post-content">
+            <h1>Demystifying Collaborative Filtering</h1>
+            <span class="post-meta">Published on <time datetime="2025-06-25">June 25, 2025</time> by Jaggu Pokharel</span>
+
+            <p>Recommendation systems are ubiquitous, guiding our choices from movies to products. At the heart of many such systems lies **Collaborative Filtering (CF)**, a powerful technique that leverages user behavior to make predictions.</p>
+
+            <h2>What is Collaborative Filtering?</h2>
+            <p>Collaborative Filtering works on the principle that if two users shared similar tastes in the past (e.g., they watched the same movies and rated them similarly), they are likely to have similar tastes in the future. Or, if two items are often liked by the same users, those items are similar and can be recommended together.</p>
+
+            <h3>Types of Collaborative Filtering:</h3>
+            <ul>
+                <li>
+                    <strong>User-Based Collaborative Filtering:</strong> Finds users similar to the active user and recommends items that those "neighboring" users liked but the active user hasn't seen. This is like saying, "People who are like you, also liked this."
+                </li>
+                <li>
+                    <strong>Item-Based Collaborative Filtering:</strong> Identifies items that are similar to the items the active user has already liked. This is like saying, "If you liked this item, you'll probably like these other items that are similar to it." Item-based CF is often more stable and scalable.
+                </li>
+            </ul>
+
+            <h2>Challenges and Solutions</h2>
+            <p>While effective, CF faces challenges:</p>
+            <ul>
+                <li>
+                    <strong>Cold Start Problem:</strong> New users or new items have little or no interaction data, making it hard to generate recommendations. Solutions often involve recommending popular items or using content-based filtering initially.
+                </li>
+                <li>
+                    <strong>Scalability:</strong> As the number of users and items grows, computing similarities can become computationally expensive. Techniques like matrix factorization (e.g., Singular Value Decomposition) or using clustering can help.
+                </li>
+                <li>
+                    <strong>Sparsity:</strong> Most users interact with only a tiny fraction of available items, leading to sparse data. This makes finding reliable neighbors difficult.
+                </li>
+            </ul>
+
+            <p>Despite these challenges, collaborative filtering remains a cornerstone of modern recommendation systems, continuously evolving with new algorithms and hybrid approaches.</p>
+
+            <div class="blog-navigation">
+                <a href="../blog.html">← Back to Blog List</a>
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="current-year"></span> Jaggu's Portfolio</p>
+        <p>Built with passion and FastAPI</p>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

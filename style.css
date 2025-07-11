@@ -5,7 +5,7 @@
     --gray-100: #F3F4F6;
     --gray-800: #2C3E50; /* A slightly darker gray for text */
     --gray-900: #1c2331; /* Even darker for titles */
-    --white: #e9dcdc;
+    --white: #f7f0f0;
     --indigo-50: #EEF2FF; /* For hover states */
     --indigo-300: #A5B4FC; /* For border */
 }
@@ -311,79 +311,6 @@ section {
 .skill-badge:hover {
     transform: translateY(-3px);
     background-color: #3B82F6; /* Slightly darker primary on hover */
-}
-
-/* Contact Section */
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: var(--white);
-    padding: 2.5rem; /* p-10 */
-    border-radius: 0.75rem; /* rounded-xl */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
-}
-
-.form-group {
-    margin-bottom: 1.5rem; /* mb-6 */
-}
-
-.form-group label {
-    display: block;
-    font-size: 1rem; /* text-base */
-    font-weight: 600; /* font-semibold */
-    color: var(--gray-800);
-    margin-bottom: 0.5rem; /* mb-2 */
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group textarea {
-    width: 100%;
-    padding: 0.75rem 1rem; /* px-4 py-3 */
-    border: 1px solid #D1D5DB; /* border-gray-300 */
-    border-radius: 0.5rem; /* rounded-md */
-    font-size: 1rem; /* text-base */
-    color: var(--gray-900);
-    background-color: var(--gray-100);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.form-group input[type="text"]:focus,
-.form-group input[type="email"]:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.25); /* ring-4 ring-primary/25 */
-}
-
-.form-group textarea {
-    resize: vertical;
-}
-
-.submit-btn {
-    display: block;
-    width: 100%;
-    padding: 1rem 1.5rem; /* py-4 px-6 */
-    background-color: var(--primary-color);
-    color: var(--white);
-    font-size: 1.125rem; /* text-lg */
-    font-weight: 700; /* font-bold */
-    border: none;
-    border-radius: 0.5rem; /* rounded-lg */
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.submit-btn:hover {
-    background-color: #3B82F6; /* Slightly darker primary on hover */
-    transform: translateY(-2px);
-}
-
-.form-message {
-    text-align: center;
-    margin-top: 1.5rem; /* mt-6 */
-    font-size: 1rem; /* text-base */
-    color: var(--gray-800);
 }
 
 /* Footer */
