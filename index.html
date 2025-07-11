@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaggu's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
+</head>
+<body class="body-base">
+    <header class="main-header">
+        <nav class="navbar container">
+            <a href="#" class="navbar-brand">Jaggu's Portfolio</a>
+            <ul class="navbar-nav">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section id="about" class="section-gradient">
+            <div class="container about-content">
+                <div class="about-image-wrapper">
+                    <img src="profile.png" alt="Jaggu Pokharel"
+                         class="profile-image">
+                </div>
+                <div class="about-text-content">
+                    <h1 class="hero-title">
+                        Hello, I'm <span class="text-primary">Jagadish Pokharel</span>!
+                    </h1>
+                    <p class="hero-description">
+                        A passionate Computer Science student specializing in Machine Learning and web technologies.
+                        I build robust applications with a focus on clean code and user experience.
+                    </p>
+                    <div class="contact-info">
+                        <a href="mailto:jagupok@gmail.com" class="email-link">
+                            jagupok@gmail.com
+                        </a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/jagadish-pokharel" target="_blank" aria-label="LinkedIn">
+                            <svg class="social-icon" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM4 9H0v12h4V9zM2 6a2 2 0 110-4 2 2 0 010 4z"/></svg>
+                        </a>
+                        <a href="https://github.com/jagadish-pokharel" target="_blank" aria-label="GitHub">
+                            <svg class="social-icon" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.799 8.205 11.385.6.11.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.043-1.61-4.043-1.61-.546-1.387-1.333-1.758-1.333-1.758-1.087-.745.083-.729.083-.729 1.205.085 1.838 1.838 1.238 1.838 1.238 1.07 1.834 2.807 1.304 3.49.997.108-.775.419-1.304.762-1.604-2.665-.304-5.466-1.332-5.466-5.93 0-1.31.465-2.382 1.235-3.22-.12-.304-.535-1.52.117-3.176 0 0 1-.322 3.295 1.23.96-.267 1.98-.401 3-.407 1.02.006 2.04.14 3 .407 2.295-1.552 3.295-1.23 3.295-1.23.652 1.656.237 2.872.117 3.176.77.838 1.235 1.91 1.235 3.22 0 4.61-2.805 5.624-5.475 5.92.43.37.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .32.21.693.825.575C20.565 21.187 24 16.702 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section-white">
+            <div class="container">
+                <h2 class="section-title">My Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Book Recommendation System</h3>
+                        <p>Developed using Hybrid techniques, implementing user-based and item-based filtering approaches. Processed datasets with over 1,000,000 book entries.</p>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Machine Learning</span>
+                        <span class="tech-tag">Collaborative Filtering</span>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Text Summarization API</h3>
+                        <p>Integrated LLM API for concise text summaries and built a Flask-based web interface for text input and display. Reduced average reading time by 70% for lengthy documents and implemented caching to improve response times.</p>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">LLM API</span>
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">Caching</span>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Personal Portfolio Website</h3>
+                        <p>Developed using Django with user authentication. Designed a responsive layout with blog functionality and implemented security measures including HTTPS.</p>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">HTML/CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">User Authentication</span>
+                        <span class="tech-tag">HTTPS</span>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Library Management System (SQL Database)</h3>
+                        <p>Designed and implemented a comprehensive database system for library operations, including a normalized relational database schema with 10+ tables (Books, Members, Loans, etc.).</p>
+                        <span class="tech-tag">SQL</span>
+                        <span class="tech-tag">Database Systems</span>
+                        <span class="tech-tag">SQLite</span>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Language Detection</h3>
+                        <p>Designed and implemented a comprehensive language detection system using NLTK and scikit-learn. Processed datasets with over 1,000,000 text entries.</p>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">NLTK</span>
+                        <span class="tech-tag">scikit-learn</span>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>QA bot</h3>
+                        <p>Developed a question-answering bot using LLMs, capable of answering questions based on a provided context. Implemented a Flask-based web interface for user interaction.</p>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">streamlit</span>
+                        <span class="tech-tag">BERT</span>
+                        <span class="tech-tag">Natural Language Processing</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<section id="skills" class="section-gradient">
+            <div class="container">
+                <h2 class="section-title">My Skills</h2>
+                <div class="skills-container">
+                    <span class="skill-badge">Python (Proficient)</span>
+                    <span class="skill-badge">JavaScript</span>
+                    <span class="skill-badge">HTML/CSS</span>
+                    <span class="skill-badge">Django</span>
+                    <span class="skill-badge">Flask</span>
+                    <span class="skill-badge">Scikit-learn</span>
+                    <span class="skill-badge">Pandas</span>
+                    <span class="skill-badge">NumPy</span>
+                    <span class="skill-badge">Collaborative Filtering</span>
+                    <span class="skill-badge">NLP</span>
+                    <span class="skill-badge">Recommendation Systems</span>
+                    <span class="skill-badge">Git</span>
+                    <span class="skill-badge">GitHub</span>
+                    <span class="skill-badge">VS Code</span>
+                    <span class="skill-badge">Jupyter Notebook</span>
+                    <span class="skill-badge">SQL</span>
+                    <span class="skill-badge">SQLite</span>
+                    <span class="skill-badge">Latex</span>
+                    <span class="skill-badge">Cloud Computing</span>
+                    <span class="skill-badge">AI applications</span>
+                    <span class="skill-badge">Cybersecurity</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section-white">
+            <div class="container">
+                <h2 class="section-title">Get in Touch</h2>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        Send Message
+                    </button>
+                    <div id="form-message" class="form-message"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="current-year"></span> Jaggu's Portfolio</p>
+        <p>Built with passion and FastAPI</p>
+    </footer>
+
+    <script src="/assets/js/script.js"></script>
+</body>
+</html>
