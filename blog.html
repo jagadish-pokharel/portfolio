@@ -12,8 +12,8 @@
             background-color: var(--white);
             border-radius: 0.75rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            padding: 2 rem;
-            margin-bottom: 2rem;
+            padding: 4rem; /* Corrected: Removed space between '4' and 'rem' */
+            /* margin-bottom: 2rem; Removed this, as gap will handle spacing */
         }
 
         .blog-post-card h2 {
@@ -62,12 +62,20 @@
             padding-top: 7rem; /* More padding for blog to ensure header clears */
             padding-bottom: 4rem;
         }
+
+        /* New styles for consistent spacing between blog posts using flexbox gap */
+        .blog-posts-section {
+            display: flex;
+            flex-direction: column; /* Stack blog posts vertically */
+            gap: 2.5rem; /* Adjust this value for desired spacing between cards */
+        }
     </style>
 </head>
 <body class="body-base">
     <header class="main-header">
         <nav class="navbar container">
-            <a href="index.html" class="navbar-brand">Jaggu's Portfolio</a> <ul class="navbar-nav">
+            <a href="index.html" class="navbar-brand">Jaggu's Portfolio</a>
+            <ul class="navbar-nav">
                 <li><a href="index.html#about" class="nav-link">About</a></li>
                 <li><a href="index.html#projects" class="nav-link">Projects</a></li>
                 <li><a href="index.html#skills" class="nav-link">Skills</a></li>
@@ -81,10 +89,10 @@
 
         <section class="blog-posts-section">
             <div class="blog-post-card">
-                <h2><a href="blog-posts/ai-web-dev.html">The Future of AI in Web Development</a></h2>
+                <h2><a href="blog-posts/AI_web.html">The Future of AI in Web Development</a></h2>
                 <p class="post-meta">Published on <time datetime="2025-07-10">July 10, 2025</time> by Jaggu Pokharel</p>
                 <p>Artificial Intelligence is rapidly transforming how we build websites. From AI-powered content generation to intelligent user interfaces, the landscape is changing. This post explores the exciting developments...</p>
-                <a href="blog-posts/ai-web-dev.html" class="read-more">Read More</a>
+                <a href="blog-posts/AI_web.html" class="read-more">Read More</a>
             </div>
 
             <div class="blog-post-card">
@@ -102,6 +110,6 @@
         <p>Built with passion and FastAPI</p>
     </footer>
 
-    <script src="/assets/js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

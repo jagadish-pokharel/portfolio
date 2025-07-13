@@ -1,23 +1,29 @@
 /* Variables */
 :root {
-    --primary-color: #4F46E5;
-    --secondary-color: #d2d8eb;
-    --gray-100: #F3F4F6;
-    --gray-800: #2C3E50; /* A slightly darker gray for text */
-    --gray-900: #1c2331; /* Even darker for titles */
-    --white: #f7f0f0;
-    --indigo-50: #EEF2FF; /* For hover states */
-    --indigo-300: #A5B4FC; /* For border */
+    --primary-color: #4F46E5; /* Deep Indigo - Good choice! */
+    --secondary-color: #E0E7FF; /* Lighter Indigo/Lavender for secondary elements (was d2d8eb, a bit too gray) */
+    --accent-color: #6366F1; /* A slightly lighter shade of primary for subtle hovers/borders */
+    --text-dark: #1A202C;    /* Very dark gray for main headings (was gray-900) */
+    --text-body: #374151;    /* Slightly lighter dark gray for body text (was gray-800) */
+    --text-light: #6B7280;   /* Medium gray for meta info, less prominent text (was gray-700) */
+    --bg-light: #F9FAFB;     /* Very light gray for backgrounds (was gray-100) */
+    --bg-white: #FFFFFF;     /* Pure white for cards, headers (was f7f0f0, which is off-white) */
+    --border-color: #C7D2FE; /* A soft indigo for borders (was indigo-300) */
+
+    /* Re-evaluate Indigo-50 and Indigo-300 based on new palette */
+    /* Removed specific indigo vars as they are now mapped to more semantic names */
 }
 
 /* Base Styles */
 body {
-    font-family: sans-serif;
+    font-family: 'Inter', sans-serif; /* Recommended a more modern sans-serif font */
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-    color: var(--gray-800);
-    background-color: var(--gray-100);
+    line-height: 1.7; /* Increased for better readability */
+    color: var(--text-body);
+    background-color: var(--bg-light);
+    -webkit-font-smoothing: antialiased; /* For smoother font rendering */
+    -moz-osx-font-smoothing: grayscale; /* For smoother font rendering */
 }
 
 .container {
@@ -30,12 +36,12 @@ body {
 
 /* Header */
 .main-header {
-    background-color: var(--white);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--bg-white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Slightly softer shadow */
     padding: 1rem 0;
     position: fixed;
     width: 100%;
-    z-index: 10;
+    z-index: 1000; /* Increased z-index for absolute certainty */
 }
 
 .navbar {
@@ -45,17 +51,18 @@ body {
 }
 
 .navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.6rem; /* Slightly larger */
+    font-weight: 700; /* Bold */
     color: var(--primary-color);
     text-decoration: none;
     padding: 0.25rem 0.75rem;
     border-radius: 0.5rem;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .navbar-brand:hover {
-    background-color: var(--indigo-50);
+    background-color: var(--secondary-color); /* Use secondary for hover */
+    color: var(--primary-color); /* Keep primary color */
 }
 
 .navbar-nav {
@@ -63,49 +70,50 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 1.5rem; /* Equivalent to Tailwind's space-x-6 */
+    gap: 1.75rem; /* Slightly increased gap for spacious feel */
 }
 
 .nav-link {
     text-decoration: none;
-    color: var(--gray-800);
-    padding: 0.5rem 0.75rem;
+    color: var(--text-body);
+    padding: 0.6rem 0.85rem; /* Slightly more padding */
     transition: color 0.3s ease, background-color 0.3s ease, border-radius 0.3s ease;
+    font-weight: 500; /* Medium weight */
 }
 
 .nav-link:hover {
     color: var(--primary-color);
-    background-color: var(--indigo-50);
-    border-radius: 0.25rem;
+    background-color: var(--secondary-color);
+    border-radius: 0.375rem; /* Slightly more rounded */
 }
 
 /* Main Content Padding */
 .main-content {
-    padding-top: 5rem; /* To account for fixed header height */
+    padding-top: 5.5rem; /* Adjusted for slightly taller header or more clearance */
 }
 
 /* Sections */
 section {
-    padding: 2.5rem 0; /* Reduced from 4rem 0 to 2.5rem 0 */
-    min-height: calc(100vh - 5rem); /* Adjust based on header height */
+    padding: 4rem 0; /* Reverted to 4rem for more generous section spacing */
+    min-height: calc(100vh - 6rem); /* Adjust based on header height and footer */
     display: flex;
     align-items: center;
 }
 
 .section-gradient {
-    background: linear-gradient(to right, var(--secondary-color), var(--white));
+    background: linear-gradient(to bottom right, var(--secondary-color), var(--bg-white)); /* Changed direction for a smoother fade */
 }
 
 .section-white {
-    background-color: var(--white);
+    background-color: var(--bg-white);
 }
 
 .section-title {
-    font-size: 2.5rem;
-    font-weight: 800; /* extabold */
-    color: var(--gray-900);
+    font-size: 2.8rem; /* Slightly larger for prominence */
+    font-weight: 800;
+    color: var(--text-dark);
     text-align: center;
-    margin-bottom: 3rem; /* Equivalent to mb-12 */
+    margin-bottom: 3.5rem; /* Increased margin below title */
 }
 
 /* About Section */
@@ -114,7 +122,7 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2 rem; /* Equivalent to gap-10 */
+    gap: 2.5rem; /* Corrected '2 rem' to '2.5rem' and increased */
     text-align: center;
 }
 
@@ -126,43 +134,49 @@ section {
 }
 
 .about-image-wrapper {
-    flex-shrink: 0; /* Prevent image from shrinking */
+    flex-shrink: 0;
     display: flex;
     justify-content: center;
-    width: 100%; /* For smaller screens */
+    width: 100%;
 }
 
 @media (min-width: 768px) {
     .about-image-wrapper {
-        width: 33.333333%; /* md:w-1/3 */
+        width: 33.333333%;
     }
 }
 
 .profile-image {
-    border-radius: 9999px; /* rounded-full */
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
-    border: 4px solid var(--indigo-300);
-    width: 16rem; /* w-64 */
-    height: 16rem; /* h-64 */
+    border-radius: 50%; /* More semantic than 9999px for perfect circle */
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.08); /* Slightly stronger shadow */
+    border: 5px solid var(--border-color); /* Slightly thicker border */
+    width: 17rem; /* Slightly larger image */
+    height: 17rem;
     object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
+.profile-image:hover {
+    transform: scale(1.03); /* Subtle zoom on hover */
+}
+
+
 .about-text-content {
-    width: 100%; /* For smaller screens */
+    width: 100%;
 }
 
 @media (min-width: 768px) {
     .about-text-content {
-        width: 66.666667%; /* md:w-2/3 */
+        width: 66.666667%;
     }
 }
 
 .hero-title {
-    font-size: 3rem; /* text-5xl */
-    font-weight: 800; /* font-extrabold */
-    color: var(--gray-900);
-    margin-bottom: 1rem; /* mb-4 */
-    line-height: 1.25; /* leading-tight */
+    font-size: 3.2rem; /* Adjusted for impact */
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 1.25rem; /* mb-5 */
+    line-height: 1.2; /* Slightly tighter leading */
 }
 
 .hero-title .text-primary {
@@ -170,10 +184,10 @@ section {
 }
 
 .hero-description {
-    font-size: 1.125rem; /* text-lg */
-    color: var(--gray-700);
-    margin-bottom: 1.5rem; /* mb-6 */
-    max-width: 50rem; /* max-w-2xl */
+    font-size: 1.15rem; /* Slightly larger text */
+    color: var(--text-light); /* Use text-light for descriptive text */
+    margin-bottom: 2rem; /* mb-8 */
+    max-width: 55rem; /* max-w-3xl */
     margin-left: auto;
     margin-right: auto;
 }
@@ -186,31 +200,32 @@ section {
 }
 
 .contact-info {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
 }
 
 .email-link {
     display: inline-block;
     color: var(--primary-color);
     text-decoration: none;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
+    font-weight: 600; /* Semibold */
+    padding: 0.6rem 1.2rem; /* Increased padding */
     border: 2px solid var(--primary-color);
-    border-radius: 0.5rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 0.6rem; /* Slightly more rounded */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
 .email-link:hover {
     background-color: var(--primary-color);
-    color: var(--white);
+    color: var(--bg-white);
+    transform: translateY(-2px); /* Subtle lift */
 }
 
 
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 1.5rem; /* space-x-6 */
-    margin-top: 1.5rem; /* mt-6 */
+    gap: 1.75rem; /* space-x-7 */
+    margin-top: 1.75rem; /* mt-7 */
 }
 
 @media (min-width: 768px) {
@@ -220,72 +235,78 @@ section {
 }
 
 .social-icon {
-    width: 2rem; /* w-8 */
-    height: 2rem; /* h-8 */
-    fill: var(--gray-800);
+    width: 2.2rem; /* Slightly larger icon */
+    height: 2.2rem;
+    fill: var(--text-light); /* Use a softer color for default */
     transition: fill 0.3s ease, transform 0.3s ease;
 }
 
 .social-links a:hover .social-icon {
     fill: var(--primary-color);
-    transform: translateY(-2px);
+    transform: translateY(-3px); /* More pronounced lift */
 }
 
 /* Projects Section */
 .projects-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Default to one column */
-    gap: 1 rem; /* gap-8 */
+    grid-template-columns: 1fr;
+    gap: 2rem; /* Corrected '1 rem' to '2rem' and increased */
 }
 
-@media (min-width: 768px) { /* md breakpoint */
+@media (min-width: 768px) {
     .projects-grid {
-        grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (min-width: 1024px) { /* lg breakpoint */
+@media (min-width: 1024px) {
     .projects-grid {
-        grid-template-columns: repeat(3, 1fr); /* lg:grid-cols-3 */
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
 .project-card {
-    background-color: var(--white);
-    border-radius: 0.75rem; /* rounded-xl */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
-    padding: 2rem; /* p-8 */
+    background-color: var(--bg-white);
+    border-radius: 0.875rem; /* More rounded */
+    box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.08), 0 3px 6px -1px rgba(0, 0, 0, 0.05); /* Softer, slightly larger shadow */
+    padding: 2.5rem; /* More padding */
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+    transform: translateY(-8px); /* More noticeable lift */
+    box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.1), 0 5px 10px -3px rgba(0, 0, 0, 0.08); /* More prominent shadow on hover */
 }
 
 .project-card h3 {
-    font-size: 1.5rem; /* text-2xl */
-    font-weight: 700; /* font-bold */
-    color: var(--gray-900);
-    margin-bottom: 0.75rem; /* mb-3 */
+    font-size: 1.65rem; /* Slightly larger */
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.85rem;
 }
 
 .project-card p {
-    color: var(--gray-700);
-    margin-bottom: 1rem; /* mb-4 */
+    color: var(--text-light); /* Use lighter gray for project descriptions */
+    margin-bottom: 1.25rem; /* mb-5 */
 }
 
 .tech-tag {
     display: inline-block;
     background-color: var(--secondary-color);
     color: var(--primary-color);
-    font-size: 0.875rem; /* text-sm */
-    font-weight: 600; /* font-semibold */
-    padding: 0.25rem 0.75rem; /* px-3 py-1 */
-    border-radius: 0.5rem; /* rounded-full */
-    margin-right: 0.5rem; /* mr-2 */
-    margin-bottom: 0.5rem; /* mb-2 */
+    font-size: 0.9rem; /* Slightly larger text */
+    font-weight: 600;
+    padding: 0.35rem 0.85rem; /* More padding */
+    border-radius: 0.75rem; /* More rounded */
+    margin-right: 0.6rem; /* Slightly more margin */
+    margin-bottom: 0.6rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.tech-tag:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-white);
 }
 
 /* Skills Section */
@@ -293,41 +314,44 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.5rem; /* gap-4 */
-    max-width: 800px;
+    gap: 0.75rem; /* Slightly increased gap for badges */
+    max-width: 850px; /* Slightly wider max-width */
     margin: 0 auto;
 }
 
 .skill-badge {
     background-color: var(--primary-color);
-    color: var(--white);
-    font-size: 1rem; /* text-base */
-    font-weight: 500; /* font-medium */
-    padding: 0.5rem 1rem; /* px-4 py-2 */
-    border-radius: 0.75rem; /* rounded-xl */
+    color: var(--bg-white);
+    font-size: 1.05rem; /* Slightly larger text */
+    font-weight: 500;
+    padding: 0.6rem 1.2rem; /* More padding */
+    border-radius: 0.8rem; /* More rounded */
     transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .skill-badge:hover {
-    transform: translateY(-3px);
-    background-color: #3B82F6; /* Slightly darker primary on hover */
+    transform: translateY(-4px); /* More pronounced lift */
+    background-color: var(--accent-color); /* Use accent color for hover */
 }
 
 /* Footer */
 .site-footer {
-    background-color: var(--gray-900);
-    color: var(--white);
+    background-color: var(--text-dark); /* Use text-dark for footer background */
+    color: var(--bg-white); /* Use white text on dark background */
     text-align: center;
-    padding: 2rem 0; /* py-8 */
-    font-size: 0.875rem; /* text-sm */
-    line-height: 1.5;
+    padding: 2.5rem 0; /* More padding */
+    font-size: 0.9rem; /* Slightly larger text */
+    line-height: 1.6;
 }
 
 .site-footer p {
-    margin: 0.5rem 0;
+    margin: 0.6rem 0; /* More margin for readability */
 }
 
-/* Utility / Helper Classes (if needed, but aim for semantic) */
+/* Utility / Helper Classes */
 .text-primary {
     color: var(--primary-color);
 }
+
+/* Global body-base override for blog pages, if any specific style needed */
+/* Ensure this doesn't conflict with main-content padding */
