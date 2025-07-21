@@ -16,6 +16,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- Hamburger Menu Toggle Functionality ---
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navbarNav = document.querySelector('.navbar-nav');
+    const body = document.body; // Reference to the body element
+
+    if (menuToggle && navbarNav) {
+        menuToggle.addEventListener('click', function() {
+            navbarNav.classList.toggle('open');
+            menuToggle.classList.toggle('open');
+            body.classList.toggle('menu-open'); // Add/remove class to body to prevent scrolling
+        });
+
+        // Close menu when a nav link is clicked (useful for single-page apps)
+        const navLinks = navbarNav.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (navbarNav.classList.contains('open')) {
+                    navbarNav.classList.remove('open');
+                    menuToggle.classList.remove('open');
+                    body.classList.remove('menu-open');
+                }
+            });
+        });
+    }
+    // --- End Hamburger Menu Toggle Functionality ---
+
     // Handle contact form submission (example - replace with actual backend logic)
     const contactForm = document.querySelector('.contact-form');
     const formMessage = document.getElementById('form-message');
