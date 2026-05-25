@@ -2,7 +2,7 @@
 FROM nginx:alpine
 
 # Step 2: Copy your static portfolio website files into Nginx's public html directory
-COPY ./usr/share/nginx/html
+COPY . /usr/share/nginx/html
 
 # Step 3: Expose port 80 to allow external web traffic into the container
 EXPOSE 80
