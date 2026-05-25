@@ -1,0 +1,45 @@
+name: CI/CD Build and Push Docker Image
+
+on:
+  push:
+    branches: [ "main" ] # Triggers automatically when code hits the main branch
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Pull down your source code files into the virtual runner
+    - name: Checkout Repository Code
+      uses: actions/checkout@v4
+
+    # 2. Set up Docker Buildx (allows advanced caching and multi-platform builds)
+    - name: Set up Docker Buildx
+      uses: actions/docker-setup-buildx-action@v3
+
+    # 3. Log securely into Docker Hub using secrets
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v3
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+    # 4. Extract metadata (tags, labels) to keep image versions organized
+    - name: Extract Docker Metadata
+      id: meta
+      uses: docker/metadata-action@v5
+      with:
+        images: ${{ secrets.DOCKERHUB_USERNAME }}/my-portfolio
+
+    # 5. Build the image using the local Dockerfile and push it to the registry
+    - name: Build and Push Docker Image
+      uses: docker/build-push-action@v6
+      with:
+        context: .
+        file: ./Dockerfile
+        push: true
+        tags: |
+          ${{ secrets.DOCKERHUB_USERNAME }}/my-portfolio:latest
+          ${{ secrets.DOCKERHUB_USERNAME }}/my-portfolio:${{ github.sha }}
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
