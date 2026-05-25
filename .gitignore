@@ -1,0 +1,6 @@
+# Ignore the Python virtual environment folder completely
+port/
+
+# Ignore Python compiled bytecode and cache directories
+__pycache__/
+*.pyc
